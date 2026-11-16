@@ -6,13 +6,13 @@ graph LR
     
     subgraph AWS Cloud - Región us-east-1
         subgraph Nodo Manager - t3.medium
-            M1[Manager-g1 <br/> Docker Swarm Leader <br/> Consenso Raft]
+            M1[Manager <br/> Docker Swarm Leader <br/> Consenso Raft]
         end
         
         subgraph Nodos Worker - t3.small
-            W1[Worker1-g1 <br/> Réplicas Web 1.0 / 2.0]
-            W2[Worker2-g1 <br/> Réplicas Web 1.0 / 2.0]
-            W3[Worker3-g1 <br/> Réplicas Web 1.0 / 2.0]
+            W1[Worker1 <br/> Réplicas Web 1.0 / 2.0]
+            W2[Worker2 <br/> Réplicas Web 1.0 / 2.0]
+            W3[Worker3 <br/> Réplicas Web 1.0 / 2.0]
         end
     end
 
