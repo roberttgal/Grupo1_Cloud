@@ -255,13 +255,15 @@ La estructura relevante es:
 │   ├── terraform.tfstate
 │   ├── terraform.tfstate.backup
 │   └── variables.tf
-├── nginx/default.conf
+├── config__nginx/default.conf
 ├── web/
-├── Dockerfile
-├── docker-compose.yml
+├── app/
+│   ├── Dockerfile
+│   └──  docker-compose.yml
+│   └── .dockerignore
 ├── probar-balanceo.sh
 ├── README.md
-└── .dockerignore
+
 ```
 
 El `.dockerignore` existente contiene:
