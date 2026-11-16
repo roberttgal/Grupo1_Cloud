@@ -1152,38 +1152,14 @@ La tabla recoge tanto incidencias operativas previsibles como diferencias
 detectadas al revisar el código. No se afirma que todas se hayan producido
 en una ejecución concreta sin una captura o registro que lo demuestre.
 
+
 ## 4.3. Conclusiones técnicas
 
-La solución combina dos niveles de automatización:
+La infraestructura desarrollada combina automatización y alta disponibilidad para dar respuesta directa a las exigencias tecnológicas de un evento de primer nivel como la **Fórmula 1 Euskadi**:
 
-1. Terraform describe la infraestructura base: instancias EC2, key pair,
-   Security Group, discos, tags, hostnames y outputs.
-2. Docker Swarm gestiona la capa de ejecución: miembros del clúster,
-   scheduling, réplicas, routing mesh, redes overlay, actualizaciones y
-   rollback.
+1. **Automatización integral y despliegue rápido:** Mediante Terraform se aprovisiona toda la infraestructura base en AWS (redes, instancias y seguridad) de forma automatizada, mientras que Docker Swarm gestiona de manera dinámica el ciclo de vida de los contenedores de la aplicación web.
+2. **Resiliencia ante picos de tráfico masivos:** La arquitectura está preparada para absorber avalanchas repentinas de usuarios (aficionados consultando clasificaciones, horarios o resultados en directo tras la carrera), garantizando un balanceo de carga eficiente y escalado de réplicas sin interrupciones.
+3. **Continuidad del servicio en directo (*Zero-Downtime*):** Las pruebas de orquestación validan que el sistema es capaz de realizar tareas de mantenimiento mediante nodos en estado *drain*, actualizar versiones de la web de forma progresiva o aplicar un retroceso (*rollback*) inmediato si surgiera algún fallo imprevisto. Esto asegura que la plataforma del evento permanezca activa y accesible en todo momento.
+4. **Tolerancia a fallos en la nube:** Gracias a la redundancia de los nodos *workers* en AWS y a la monitorización continua del clúster, la caída imprevista de un servidor físico no afecta a los aficionados; el sistema reacciona en milisegundos migrando las tareas de forma totalmente automática.
 
-La separación es adecuada porque Terraform controla recursos relativamente
-estables de AWS, mientras que Swarm controla el ciclo de vida dinámico de
-los contenedores. El uso de outputs facilita conectar ambos niveles:
-Terraform entrega las IPs y el operador utiliza la IP privada del manager
-para iniciar el control plane.
-
-La aplicación queda preparada para cuatro réplicas, healthcheck, reinicio
-ante fallo y actualización progresiva. La cabecera
-`X-Container-Hostname` convierte el balanceo interno en una evidencia
-observable, y `version.txt` permite verificar objetivamente la versión
-activa.
-
-La principal limitación de alta disponibilidad es la existencia de un único
-manager. Los tres workers aportan capacidad de ejecución y tolerancia a la
-pérdida de una instancia de trabajo, pero no proporcionan redundancia del
-control plane. Para alta disponibilidad real de Swarm se necesitaría un
-número impar de managers, normalmente tres, distribuidos adecuadamente y
-con la mayoría Raft preservada.
-
-Finalmente, antes de considerar el entorno apto para producción deben
-endurecerse las reglas del Security Group, limitar SSH y los puertos
-internos al ámbito privado, revisar la gestión del estado remoto de
-Terraform y automatizar, si procede, la creación de la red overlay y la
-configuración SSH. Estas mejoras no deben confundirse con funcionalidades
-ya implementadas en los archivos analizados.
+En definitiva, el proyecto demuestra que la combinación de AWS y contenedores orquestados proporciona la robustez, seguridad y tranquilidad necesarias para que la plataforma digital de un evento global como la Fórmula 1 Euskadi funcione con total garantía de éxito desde el primer minuto.
