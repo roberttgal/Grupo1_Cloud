@@ -1146,12 +1146,7 @@ endurecimiento.
 | El stack no encuentra `red-g1` | El Compose la declara `external: true` | Crear la red antes con `docker network create` |
 | Fragmentación del tráfico overlay | Encapsulación VXLAN sobre la red subyacente | Crear `red-g1` con MTU `1450` |
 | Los workers no descargan la imagen | El registro requiere autenticación | Usar `docker login` y `--with-registry-auth` |
-| No se observa el balanceo | Consultar solo el cuerpo HTML no identifica la réplica | Inspeccionar `X-Container-Hostname` con el script |
-| La web no muestra la versión | No se consultó el fichero generado por el build | Usar `curl http://<IP>/version.txt` |
-| No se puede demostrar elección de líder | Solo existe un manager en Terraform | Documentar la limitación o ampliar a tres managers |
-| Variable de tipo de instancia sin efecto | `main.tf` fija literalmente los tipos | Sustituir los literales por `var.tipo_manager` y `var.tipo_worker` si se requiere parametrización |
-| Riesgo de exposición de secretos | El estado Terraform puede contener metadatos sensibles | Mantener `*.tfstate` fuera de Git y verificar `.gitignore` |
-| SSH abierto a Internet | `security.tf` usa `0.0.0.0/0` para el puerto 22 | Restringir el CIDR al origen administrativo |
+
 
 La tabla recoge tanto incidencias operativas previsibles como diferencias
 detectadas al revisar el código. No se afirma que todas se hayan producido
