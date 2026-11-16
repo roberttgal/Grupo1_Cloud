@@ -24,3 +24,9 @@ graph LR
     M1 -.->|Orquestación y Control| W2
     M1 -.->|Orquestación y Control| W3
 ```
+%% Estilos de color personalizados
+    style M1 fill:#ffcccc,stroke:#ff0000,stroke-width:2px,color:#000
+    style W1 fill:#cce5ff,stroke:#0066cc,stroke-width:2px,color:#000
+    style W2 fill:#cce5ff,stroke:#0066cc,stroke-width:2px,color:#000
+    style W3 fill:#cce5ff,stroke:#0066cc,stroke-width:2px,color:#000
+    style VPC fill:#fff3cd,stroke:#ff9900,stroke-width:2px,color:#000
