@@ -296,7 +296,7 @@ las confirmaciones.
 
 ### Evidencias y capturas comentadas
 
-![Entorno de desarrollo con AWS CLI y Terraform](evidencias/fase0.png)
+![Entorno de desarrollo con AWS CLI y Terraform](evidencias/fase0.1.png)
 
 *Figura 0.1. El Dev Container activo muestra la estructura real del repositorio en el explorador, así como las herramientas y extensiones de Terraform preparadas para el despliegue.*
 
