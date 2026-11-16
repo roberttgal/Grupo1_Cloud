@@ -257,6 +257,7 @@ La estructura relevante es:
 │   └── variables.tf
 ├── config__nginx/default.conf
 ├── web/
+├── diagrama/
 ├── app/
 │   ├── Dockerfile
 │   └──  docker-compose.yml
