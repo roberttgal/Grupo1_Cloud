@@ -1,7 +1,7 @@
 # Arquitectura del Clúster Docker Swarm - Fórmula 1 Euskadi
 
 ```mermaid
-graph TD
+graph LR
     Client((Usuarios / Aficionados F1)) -->|Tráfico HTTP| VPC[AWS VPC - Subred Pública]
     
     subgraph AWS Cloud - Región us-east-1
