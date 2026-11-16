@@ -2,7 +2,7 @@
 
 ```mermaid
 graph LR
-    Client((Usuarios / Aficionados F1)) -->|Tráfico HTTP| VPC[AWS VPC - Subred Pública]
+    Client((Usuarios / Aficionados F1)) -->|Tráfico HTTP| VPC[AWS (nUBE Privada) - Subred Pública]
     
     subgraph AWS Cloud - Región us-east-1
         subgraph Nodo Manager - t3.medium
