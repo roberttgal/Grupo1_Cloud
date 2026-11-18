@@ -1,4 +1,4 @@
-# Informe técnico del Reto 4: clúster Docker Swarm en AWS
+# Informe técnico de Reto 4: clúster Docker Swarm en AWS
 
 ## Metadata del proyecto
 
