@@ -7,3 +7,4 @@
 
 
 El desarrollo conjunto del reto nos ha permitido comprobar de primera mano la importancia de la automatización en entornos de alta disponibilidad. La división de tareas facilitó validar con agilidad los despliegues y asegurar el correcto funcionamiento del sistema ante cualquier tipo de imprevisto.
+--
