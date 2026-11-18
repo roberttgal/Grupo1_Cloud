@@ -1,4 +1,4 @@
-# Reto 4: Docker Swarm en AWS con Terraform
+# Reto 4: Docker Swarm en AWS con la herramienta Terraform
 
 Despliegue de una web estática de Fórmula 1 en un clúster Docker Swarm
 provisionado con Terraform sobre AWS `us-east-1`.
