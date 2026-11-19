@@ -30,7 +30,7 @@
 
 ### 1.1. Introducción técnica
 
-Con motivo de la celebración del Gran Premio de Euskadi del Campeonato del Mundo de F1 en el nuevo circuito de Bilbao[cite: 18], el presente proyecto desarrolla la infraestructura cloud necesaria para alojar la web oficial del evento, garantizando su disponibilidad y rendimiento ante los picos de tráfico durante la competición.
+Con motivo de la celebración del Gran Premio de Euskadi del Campeonato del Mundo de F1 en el nuevo circuito de Bilbao, el presente proyecto desarrolla la infraestructura cloud necesaria para alojar la web oficial del evento, garantizando su disponibilidad y rendimiento ante los picos de tráfico durante la competición.
 
 El objetivo del Reto 4 es desplegar una aplicación web estática en una
 arquitectura distribuida de cuatro instancias EC2. Terraform se utiliza como
